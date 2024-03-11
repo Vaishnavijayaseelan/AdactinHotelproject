@@ -1,5 +1,7 @@
 package com.adactinproject.qa.pages;
 
-public class BookedItineraryPage {
+import com.adactinproject.qa.base.TestBase;
+
+public class BookedItineraryPage extends TestBase{
 
 }

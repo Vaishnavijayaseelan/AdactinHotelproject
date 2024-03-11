@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.adactinproject.utilities.TestUtil;
+import com.adactinproject.qa.utilities.TestUtil;
 
 
 public class TestBase {
@@ -24,7 +24,7 @@ public class TestBase {
 	
 	try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("C:\\Users\\User\\eclipse-workspace\\FirstSeleniumDemo1\\AdactinProject\\src\\main\\java\\com\\adactinproject\\qa\\config\\config.properties");
+			FileInputStream ip = new FileInputStream("C:\\Users\\User\\eclipse-workspace\\AdactinProject\\src\\main\\java\\com\\adactinproject\\qa\\config\\config.properties");
 		    prop.load(ip);
 		    
 		    prop.load(ip);

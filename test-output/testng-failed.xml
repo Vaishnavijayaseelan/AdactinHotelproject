@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.adactinproject.testcases.NewUserRegistrationPageTest">
+      <class name="com.adactinproject.testcases.BookingConfirmationPageTest">
         <methods>
-          <include name="logoImageTest"/>
-          <include name="setup"/>
+          <include name="myItineraryTest"/>
           <include name="tearDown"/>
+          <include name="orderNoTest"/>
+          <include name="BookingConfirmationPageTitle"/>
         </methods>
-      </class> <!-- com.adactinproject.testcases.NewUserRegistrationPageTest -->
+      </class> <!-- com.adactinproject.testcases.BookingConfirmationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

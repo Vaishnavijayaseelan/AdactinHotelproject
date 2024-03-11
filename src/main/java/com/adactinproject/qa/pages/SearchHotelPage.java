@@ -24,6 +24,12 @@ public class SearchHotelPage extends TestBase {
 	@FindBy(xpath = "//select[@id='room_nos']")
 	WebElement roomNos;
 	
+	@FindBy(xpath = "//input[@id='datepick_in']")
+	WebElement checkInDate;
+	
+	@FindBy(xpath = "//input[@id='datepick_out']")
+	WebElement checkOutDate;
+	
 	
 	@FindBy(xpath = "//input[@id='Submit']")
 	WebElement submitBtn;
@@ -43,6 +49,10 @@ public class SearchHotelPage extends TestBase {
 		return userNameLabel.isDisplayed();
 	}
 	
+	public void select_locationviadropdown() {
+		Select locations = new Select(location);
+		locations.selectByIndex(1);	
+	}
 	
 	public void select_hotelviadropdown() {
 		Select hotel = new Select(hotels);
@@ -56,12 +66,23 @@ public class SearchHotelPage extends TestBase {
 	
 	public void select_roomnosviadropdown() {
 		Select noofrooms = new Select(roomNos);
-		noofrooms.selectByIndex(2);
+		noofrooms.selectByIndex(2);	
 	}
 	
-	public SearchHotelPage submit() {
+	public void enterCheckIndate (String checkIn) {
+		checkInDate.clear();
+		checkInDate.sendKeys(checkIn);
+	}
+	
+	public void enterCheckOutdate (String checkOut) {
+		checkOutDate.clear();
+        checkOutDate.sendKeys(checkOut);
+	}
+	
+	
+	public SelectHotelPage submit() {
 		submitBtn.click();
-		return new SearchHotelPage();
+		return new SelectHotelPage();
 	}
 	
 
