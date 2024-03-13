@@ -13,9 +13,8 @@ import com.adactinproject.qa.pages.LoginPage;
 import com.adactinproject.qa.pages.SearchHotelPage;
 import com.adactinproject.qa.pages.SelectHotelPage;
 
-import net.bytebuddy.implementation.bind.annotation.Super;
-
-public class BookingConfirmationPageTest extends TestBase{
+public class BookedItineraryPageTest extends TestBase{
+	
 	LoginPage loginpage;
     SearchHotelPage searchhotelpage;
     SelectHotelPage selecthotelpage;
@@ -23,13 +22,12 @@ public class BookingConfirmationPageTest extends TestBase{
     BookingConfirmationPage bookingconfirmationpage;
     BookedItineraryPage bookeditinerarypage;
     
-    public BookingConfirmationPageTest() {
-    	 super();
-  
+    public BookedItineraryPageTest() {
+    	super();
     }
-    
+   
     @BeforeMethod
-    public void setUp() {
+    public void SetUp() {
     	initialization();
     	loginpage = new LoginPage();
     	searchhotelpage = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
@@ -50,28 +48,32 @@ public class BookingConfirmationPageTest extends TestBase{
 	     bookahotelpage.enterBookingdetails();
 	     bookahotelpage.selectCreditCardDetails();
 	     bookahotelpage.submit();
+	     bookingconfirmationpage.validateOderNo();
+	     bookingconfirmationpage.myItineraryPage();
+	     
 	     
     }
-
-    @Test 
-    public void BookingConfirmationPageTitle() {
-    	String title = bookingconfirmationpage.vadidateBookingConfirmationTitle();
-    	Assert.assertEquals(title, "Adactin.com - Book A Hotel");
-    }
-    
+	
     @Test
-    public void orderNoTest() {
-    	bookingconfirmationpage.validateOderNo();
-    }
-    
-    @Test
-    public void myItineraryTest() {
-    	bookingconfirmationpage.myItineraryPage();
-    }
-    
-    @AfterMethod
-    public void tearDown() {
-    	driver.quit();
+    public void bookedItineraryPageTitleTest() {
+    	String title = bookeditinerarypage.validateBookedItineraryPageTitle();
+    	Assert.assertEquals(title, "Adactin.com - Select Hotel");
     	
     }
+    
+    
+	
+    @Test
+   
+    public void clickheretologinagainlinkTest() {
+    	bookeditinerarypage.logoutPage();
+    	loginpage = bookeditinerarypage.clickHereToLoginAgain();
+    		
+    }
+   
+	@AfterMethod
+	 public void tearDown() {
+		driver.quit();
+	}
+
 }

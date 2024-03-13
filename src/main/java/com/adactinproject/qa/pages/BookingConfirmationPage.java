@@ -17,8 +17,7 @@ public class BookingConfirmationPage extends TestBase{
 	@FindBy(xpath = "//input[@id='my_itinerary']")
 	WebElement myItineraryBtn;
 	
-	@FindBy(xpath = "//input[@id='logout']")
-	WebElement logOutBtn;
+	
 	
 	
 	public BookingConfirmationPage() {
@@ -36,5 +35,6 @@ public class BookingConfirmationPage extends TestBase{
 		myItineraryBtn.click();
 		return new BookedItineraryPage();
 	}
+	
 }
 

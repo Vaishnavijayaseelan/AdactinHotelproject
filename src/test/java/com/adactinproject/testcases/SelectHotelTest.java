@@ -34,7 +34,7 @@ import com.adactinproject.qa.pages.SelectHotelPage;
 	   	searchhotelpage.select_hotelviadropdown();
 	   	searchhotelpage.select_roomtypeviadropdown();
 	   	searchhotelpage.select_roomnosviadropdown();	
-	   	searchhotelpage.enterCheckIndate("10/03/2024");
+	   	searchhotelpage.enterCheckIndate("11/03/2024");
 	   	searchhotelpage.enterCheckOutdate("12/03/2024");
 	   	searchhotelpage.submit();
 	   

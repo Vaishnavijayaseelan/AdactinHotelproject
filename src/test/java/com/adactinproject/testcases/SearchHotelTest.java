@@ -46,10 +46,12 @@ public class SearchHotelTest extends TestBase{
     	searchhotelpage.select_hotelviadropdown();
     	searchhotelpage.select_roomtypeviadropdown();
     	searchhotelpage.select_roomnosviadropdown();	
-    	searchhotelpage.enterCheckIndate("14/03/2024");
-    	searchhotelpage.enterCheckOutdate("12/03/2024");
+    	searchhotelpage.enterCheckIndate("13/03/2024");
+    	searchhotelpage.enterCheckOutdate("14/03/2024");
     	searchhotelpage.submit();
     }
+    
+    
  
 	 @AfterMethod
 	 public void tearDown() {
